@@ -140,7 +140,7 @@ function metamedia_collection_control( $args = array() ) {
  * @since 1.0.0
  *
  * @param string $meta_key Post meta key to save attachment ID under.
- * @param string $post_type Post types to display the meta box on.
+ * @param string|array $post_type Post types to display the meta box on.
  * @param array $args Arguments to modify behavior and labels for the meta box and control.
  */
 function register_metamedia_meta_box( $meta_key, $post_type, $args = array() ) {
@@ -170,7 +170,7 @@ function register_metamedia_meta_box( $meta_key, $post_type, $args = array() ) {
  * @since 1.0.0
  *
  * @param string $meta_key Post meta key to save attachment ID under.
- * @param string $post_type Post types to display the meta box on.
+ * @param string|array $post_type Post types to display the meta box on.
  * @param array $args Arguments to modify behavior and labels for the meta box and control.
  */
 function register_metamedia_gallery_meta_box( $meta_key, $post_type, $args = array() ) {
