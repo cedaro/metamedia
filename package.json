@@ -1,0 +1,25 @@
+{
+  "name": "Metamedia",
+  "version": "1.0.0",
+  "description": "A WordPress plugin to register media selection meta boxes.",
+  "homepage": "https://github.com/blazersix/metamedia",
+  "author": {
+    "name": "Brady Vercher",
+    "url": "http://www.blazersix.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blazersix/metamedia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blazersix/metamedia/issues"
+  },
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-uglify": "~0.1.2",
+    "grunt-contrib-watch": "~0.4.3"
+  }
+}

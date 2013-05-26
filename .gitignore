@@ -1,0 +1,15 @@
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+Thumbs.db
+
+# NetBeans
+nbproject/
+
+# Node.js / Grunt
+node_modules
