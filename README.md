@@ -11,6 +11,12 @@ With the release of WordPress 3.5, an effort was made to decouple attachments fr
 
 Metamedia allows for registering simple meta boxes like the "Featured Image" meta box for selecting a single image or gallery of images to be stored in a post meta field for easy retrieval and usage in templates. It can be used with any post type and uses the native media frame.
 
+![Gallery Meta Box](https://raw.github.com/blazersix/metamedia/master/screenshot-1.png)  
+_An example gallery meta box. The images can be sorted directly in the meta box._
+
+![Featured Image Meta Box](https://raw.github.com/blazersix/metamedia/master/screenshot-2.png)  
+_An example meta box with custom labels for selecting a single image._
+
 ## Usage ##
 
 To add a meta box similar to the "Featured Post" meta box, simply register it using `register_metamedia_metabox()` like this:

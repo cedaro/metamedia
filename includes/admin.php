@@ -69,7 +69,7 @@ function metamedia_save_post( $post_id, $post ) {
 	global $metamedia_meta_boxes;
 
 	// Bail if the data shouldn't be saved.
-	$is_autosave = ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ? true : false;
+	$is_autosave = defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE;
 	$is_revision = wp_is_post_revision( $post_id );
 
 	if( $is_autosave || $is_revision || ! is_array( $metamedia_meta_boxes ) ) {
