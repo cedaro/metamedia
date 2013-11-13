@@ -111,8 +111,6 @@ function metamedia_add_meta_boxes( $post ) {
 	$current_post_type = get_current_screen()->post_type;
 
 	if ( is_array( $metamedia_meta_boxes ) ) {
-		metamedia_enqueue_media();
-
 		foreach ( $metamedia_meta_boxes as $id => $box ) {
 			if ( empty( $box['meta_box_post_type'] ) ) {
 				continue;
@@ -128,6 +126,10 @@ function metamedia_add_meta_boxes( $post ) {
 					$box['meta_box_priority'],
 					$box
 				);
+
+				if ( $post_type == $current_post_type ) {
+					metamedia_enqueue_media();
+				}
 			}
 		}
 	}
