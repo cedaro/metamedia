@@ -29,9 +29,9 @@ function metamedia_init_admin() {
 	// Register scripts.
 	wp_register_script( 'metamedia', METAMEDIA_URI . 'assets/scripts/metamedia' . $suffix . '.js', array( 'media-upload', 'media-views' ) );
 	wp_localize_script( 'metamedia', 'metamediaL10n', array(
-		'frameTitle'      => __( 'Choose an Attachment', 'metamedia-i18n' ),
-		'frameUpdateText' => __( 'Update Attachment', 'metamedia-i18n' ),
-		'fullSizeLabel'   => __( 'Full Size', 'metamedia-i18n' ),
+		'frameTitle'      => __( 'Choose an Attachment', 'metamedia' ),
+		'frameUpdateText' => __( 'Update Attachment', 'metamedia' ),
+		'fullSizeLabel'   => __( 'Full Size', 'metamedia' ),
 		'imageSizeNames'  => metamedia_image_size_names(),
 	) );
 
@@ -170,9 +170,9 @@ function metamedia_select_gallery_meta_box( $post, $meta_box ) {
  */
 function metamedia_image_size_names() {
 	return apply_filters( 'image_size_names_choose', array(
-		'thumbnail' => __( 'Thumbnail', 'metamedia-i18n' ),
-		'medium'    => __( 'Medium', 'metamedia-i18n' ),
-		'large'     => __( 'Large', 'metamedia-i18n' ),
-		'full'      => __( 'Full Size', 'metamedia-i18n' )
+		'thumbnail' => __( 'Thumbnail', 'metamedia' ),
+		'medium'    => __( 'Medium', 'metamedia' ),
+		'large'     => __( 'Large', 'metamedia' ),
+		'full'      => __( 'Full Size', 'metamedia' )
 	) );
 }

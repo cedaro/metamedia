@@ -19,14 +19,14 @@ function metamedia_control( $args = array() ) {
 	$args = wp_parse_args( $args, array(
 		'attachment_id' => '',
 		'choose_class'  => array(),
-		'choose_label'  => __( 'Choose file', 'metamedia-i18n' ),
+		'choose_label'  => __( 'Choose file', 'metamedia' ),
 		'class'         => array(),
 		'field_id'      => '',
-		'frame_title'   => __( 'Choose a File', 'metamedia-i18n' ),
-		'frame_button'  => __( 'Update', 'metamedia-i18n' ),
+		'frame_title'   => __( 'Choose a File', 'metamedia' ),
+		'frame_button'  => __( 'Update', 'metamedia' ),
 		'media_type'    => 'image',
 		'meta_key'      => '',
-		'remove_label'  => __( 'Remove file', 'metamedia-i18n' ),
+		'remove_label'  => __( 'Remove file', 'metamedia' ),
 		'target'        => '.target',
 	) );
 
@@ -92,14 +92,14 @@ function metamedia_collection_control( $args = array() ) {
 	$args = wp_parse_args( $args, array(
 		'attachment_ids' => '',
 		'choose_class'   => array(),
-		'choose_label'   => __( 'Update Gallery', 'metamedia-i18n' ),
+		'choose_label'   => __( 'Update Gallery', 'metamedia' ),
 		'class'          => array(),
 		'field_id'       => '',
-		'frame_title'    => __( 'Choose Files', 'metamedia-i18n' ),
-		'frame_button'   => __( 'Update', 'metamedia-i18n' ),
+		'frame_title'    => __( 'Choose Files', 'metamedia' ),
+		'frame_button'   => __( 'Update', 'metamedia' ),
 		'media_type'     => 'image',
 		'meta_key'       => '',
-		'remove_label'   => __( 'Remove File', 'metamedia-i18n' ),
+		'remove_label'   => __( 'Remove File', 'metamedia' ),
 		'target'         => '.target',
 	) );
 
