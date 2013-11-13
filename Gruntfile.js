@@ -1,34 +1,16 @@
-'use strict';
+/*jshint node:true */
 
 module.exports = function(grunt) {
+	'use strict';
+
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
 		jshint: {
 			options: {
-				bitwise: true,
-				browser: true,
-				curly: false,
-				eqeqeq: true,
-				eqnull: true,
-				es5: true,
-				esnext: true,
-				immed: true,
-				jquery: true,
-				latedef: true,
-				newcap: true,
-				noarg: true,
-				node: true,
-				smarttabs: true,
-				strict: false,
-				trailing: true,
-				undef: true,
-				globals: {
-					metamedia: true,
-					metamediaL10n: true,
-					wp: true
-				}
+				jshintrc: '.jshintrc'
 			},
 			all: [
 				'Gruntfile.js',
@@ -40,7 +22,7 @@ module.exports = function(grunt) {
 		less: {
 			dist: {
 				options: {
-					yuicompress: true
+					cleancss: true
 				},
 				files: [
 					{
@@ -75,16 +57,5 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-
-	grunt.registerTask('default', [
-		'jshint',
-		'less',
-		'uglify',
-		'watch'
-	]);
-
+	grunt.registerTask('default', ['jshint', 'uglify', 'less', 'watch']);
 };
