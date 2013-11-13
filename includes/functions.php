@@ -114,16 +114,19 @@ function metamedia_collection_control( $args = array() ) {
 	wp_nonce_field( 'save-metamedia-control-' . $args['meta_key'], 'metamedia_control_nonce-' . $args['meta_key'] );
 	?>
 	<div class="metamedia-gallery" data-target=".target">
-		<div class="attachments">
+		<ul class="attachments">
 			<?php
 			if ( ! empty( $args['attachment_ids'] ) ) {
 				$ids = explode( ',', $args['attachment_ids'] );
 				foreach ( $ids as $id ) {
-					echo wp_get_attachment_image( $id, 'thumbnail', true, array( 'data-attachment-id' => $id ) );
+					echo '<li>';
+						echo wp_get_attachment_image( $id, 'thumbnail', true, array( 'data-attachment-id' => $id ) );
+						echo '<a class="remove">&times;</a>';
+					echo '</li>';
 				}
 			}
 			?>
-		</div>
+		</ul>
 
 		<p class="choose">
 			<a href="#" class="button js-trigger"><?php echo $args['choose_label']; ?></a>

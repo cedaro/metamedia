@@ -6,18 +6,22 @@
 		max-width: 100%;
 		height: auto;
 	}
+
 	.preview {
 		cursor: pointer;
 		float: none;
 		margin-bottom: 0;
 	}
+
 	.remove {
 		display: none;
 	}
+
 	&.has-attachment {
 		.choose {
 			display: none;
 		}
+
 		.remove {
 			display: block;
 		}
@@ -28,27 +32,69 @@
 	.attachments {
 		float: left;
 		clear: both;
+		list-style: none;
+		margin: 0;
+		padding: 0;
 		width: 100%;
-		
-		img {
+
+		li {
+			cursor: move;
+			position: relative;
 			float: left;
 			margin: 0 10px 10px 0;
 			width: 100px;
 			height: 100px;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+
+			img {
+				display: block;
+				width: 100px;
+				height: 100px;
+			}
+
+			.remove {
+				display: none;
+				cursor: pointer;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				margin: 0;
+				padding: 0;
+				width: 16px;
+				height: 16px;
+				color: #cc0000;
+				font-size: 16px;
+				font-weight: bold;
+				line-height: 16px;
+				text-align: center;
+				background: #eee;
+				border: 1px solid #ddd;
+				border-radius: 3px;
+			}
+
+			&:hover {
+				.remove {
+					display: block;
+				}
+			}
 		}
+
 		.ui-sortable-helper {
 			cursor: move;
 			color: #fff;
 			background: #333;
 		}
+
 		.ui-sortable-placeholder {
 			opacity: 1;
 			visibility: visible;
 			float: left;
 			background: #f9f9f9;
-			border: 1px dashed #aaa;
+			border: 3px dashed #aaa;
 		}
 	}
+
 	.choose {
 		clear: both;
 		width: 100%;
@@ -59,6 +105,7 @@
 	.media-sidebar {
 		display: none;
 	}
+
 	.attachments-browser {
 		.attachments,
 		.uploader-inline,

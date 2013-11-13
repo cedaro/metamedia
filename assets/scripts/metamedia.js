@@ -16,41 +16,22 @@ window.metamedia = window.metamedia || {};
 	media.control = {
 		init : function() {
 			$( '.metamedia-control' ).on( 'click', '.choose .js-trigger, .preview', function( e ) {
-				var targetSelector;
-
 				e.preventDefault();
 
 				$control = $( this ).closest( '.metamedia-control' );
-
-				targetSelector = $control.data( 'target' ) || '.target';
-				if ( 0 === targetSelector.indexOf( '#' ) ) {
-					// Context doesn't matter if the selector is an ID.
-					$controlTarget = $( targetSelector );
-				} else {
-					// Search for other selectors within the context of the control.
-					$controlTarget = $control.find( targetSelector );
-				}
+				$controlTarget = media.control.findTarget( $control );
 
 				media.control.frame().open();
 			}).on( 'click', '.remove .js-trigger', function( e ) {
-				var targetSelector;
-
 				e.preventDefault();
 
 				$control = $( this ).closest( '.metamedia-control' ).removeClass( 'has-attachment' );
 
+				// Clear the target value.
+				media.control.findTarget( $control ).val( '' );
+
 				// Clear the attachment preview.
 				$control.find( '.preview' ).html( '' );
-
-				// Clear the target value.
-				targetSelector = $control.data( 'target' ) || '.target';
-				if ( 0 === targetSelector.indexOf( '#' ) ) {
-					// Context doesn't matter if the selector is an ID.
-					$( targetSelector ).val( '' );
-				} else {
-					// Search for other selectors within the context of the control.
-					$control.find( targetSelector ).val( '' );
-				}
 			}).on( 'selectionChange.metamedia', function( e, selection ) {
 				var $control = $( e.target ),
 					model = selection.first(),
@@ -71,6 +52,21 @@ window.metamedia = window.metamedia || {};
 			});
 		},
 
+		findTarget : function( $control ) {
+			var selector = $control.data( 'target' ) || '.target',
+				$target;
+
+			if ( 0 === selector.indexOf( '#' ) ) {
+				// Context doesn't matter if the selector is an ID.
+				$target = $( selector );
+			} else {
+				// Search for other selectors within the context of the control.
+				$target = $control.find( selector );
+			}
+
+			return $target;
+		},
+
 		// Update the control when an image is selected from the media library.
 		select : function() {
 			var selection = this.get( 'selection' ),
@@ -78,7 +74,7 @@ window.metamedia = window.metamedia || {};
 
 			// Insert the selected attachment id into the target element.
 			if ( $controlTarget.length ) {
-				$controlTarget.val( selection.first().get( returnProperty ).trigger( 'change' ) );
+				$controlTarget.val( selection.first().get( returnProperty ) ).trigger( 'change' );
 			}
 
 			// Trigger an event on the control to allow custom updates.
@@ -134,43 +130,52 @@ window.metamedia = window.metamedia || {};
 		init : function() {
 			$( '.metamedia-gallery .attachments' ).sortable({
 				forcePlaceholderSize : true,
-				forceHelperSize : false,
+				forceHelperSize : true,
+				start : function( e, ui ) {
+					ui.placeholder.css( 'visibility', 'visible' );
+				},
 				update : function( e, ui ) {
-					var ids;
+					var $control = ui.item.closest( '.metamedia-gallery' ),
+						$target = media.control.findTarget( $control ),
+						ids;
 
-					ids = $.map( ui.item.parent().children(), function( el ) {
+					ids = _.map( ui.item.parent().find( '[data-attachment-id]' ), function( el ) {
 						return $( el ).data( 'attachment-id' );
 					}).join( ',' );
 
-					ui.item.closest( '.metamedia-gallery' ).find( '.target' ).val( ids );
+					$target.val( ids );
 				}
 			});
 
 			$( '.metamedia-gallery' ).on( 'click', '.choose .js-trigger', function( e ) {
-				var targetSelector;
-
 				e.preventDefault();
 
 				$control = $( this ).closest( '.metamedia-gallery' );
-
-				targetSelector = $control.data( 'target' ) || '.target';
-				if ( 0 === targetSelector.indexOf( '#' ) ) {
-					// Context doesn't matter if the selector is an ID.
-					$controlTarget = $( targetSelector );
-				} else {
-					// Search for other selectors within the context of the control.
-					$controlTarget = $control.find( targetSelector );
-				}
+				$controlTarget = media.control.findTarget( $control );
 
 				media.gallery.frame().open();
+			}).on( 'click', '.remove', function() {
+				var $this = $( this ),
+					$control = $this.closest( '.metamedia-gallery' ),
+					$target = media.control.findTarget( $control );
+
+				$this.closest( 'li' ).remove();
+
+				$target.val( media.gallery.getAttachmentIds( $control ).join( ',' ) );
 			});
 		},
 
+		getAttachmentIds : function( $control ) {
+			return _.map( $control.find( '[data-attachment-id]' ), function( el ) {
+					return $( el ).data( 'attachment-id' );
+				});
+		},
+
 		update : function( selection ) {
-			var images = [];
+			var items = [];
 
 			if ( $controlTarget.length ) {
-				$controlTarget.val( selection.pluck( 'id' ) );
+				$controlTarget.val( selection.pluck( 'id' ) ).trigger( 'change' );
 
 				_.each( selection.models, function( model ) {
 					var sizes = model.get( 'sizes' ),
@@ -183,10 +188,15 @@ window.metamedia = window.metamedia || {};
 
 					size = size || model.toJSON();
 
-					images.push( $( '<img />', { src: size.url } ).data( 'attachment-id', model.get( 'id' ) ) );
+					items.push( $( '<li />', {
+						html : [
+							$( '<img />', { src : size.url, 'data-attachment-id' : model.get( 'id' ) } ),
+							'<a class="remove">&times;</a>'
+						]
+					} ) );
 				});
 
-				$control.find( '.attachments' ).html( images );
+				$control.find( '.attachments' ).html( items ).sortable( 'refresh' );
 			}
 		},
 
