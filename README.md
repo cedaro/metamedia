@@ -22,7 +22,7 @@ _An example meta box with custom labels for selecting a single image._
 To add a meta box similar to the "Featured Post" meta box, simply register it using `register_metamedia_metabox()` like this:
 
 ```php
-function themename_register_mediameta() {
+function themename_register_metamedia() {
 	if ( ! is_admin() || ! function_exists( 'register_metamedia_meta_box' ) ) {
 		return;
 	}
@@ -30,7 +30,7 @@ function themename_register_mediameta() {
 	// Register a meta box for assigning a 'hero' image to posts.
 	register_metamedia_meta_box( 'hero', 'post' );
 }
-add_action( 'init', 'themename_register_mediameta' );
+add_action( 'init', 'themename_register_metamedia' );
 ```
 
 Now in a template, the image ID can be retrieved using `get_post_meta( $post_id, 'hero', true )`.
