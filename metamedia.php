@@ -18,13 +18,24 @@
  */
 
 /**
- * Framework path and URL.
+ * Library path and URL.
  */
-if ( ! defined( 'METAMEDIA_DIR' ) )
+if ( ! defined( 'METAMEDIA_DIR' ) ) {
     define( 'METAMEDIA_DIR', plugin_dir_path( __FILE__ ) );
+}
 
-if ( ! defined( 'METAMEDIA_URI' ) )
+if ( ! defined( 'METAMEDIA_URI' ) ) {
     define( 'METAMEDIA_URI', plugin_dir_url( __FILE__ ) );
+}
+
+/**
+ * Load the library text domain.
+ *
+ * @since 1.0.0
+ */
+function metamedia_load_textdomain() {
+	load_plugin_textdomain( 'metamedia', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+}
 
 /**
  * Load API functions.
@@ -37,19 +48,8 @@ require( METAMEDIA_DIR . 'includes/functions.php' );
 if ( is_admin() ) {
 	require( METAMEDIA_DIR . 'includes/admin.php' );
 
-	add_action( 'init', 'metamedia_init_admin' );
-	add_action( 'init', 'metamedia_load_textdomain' );
-}
-
-/**
- * Support localization for the plugin strings.
- *
- * @see http://www.geertdedeckere.be/article/loading-wordpress-language-files-the-right-way
- *
- * @since 1.0.0
- */
-function metamedia_load_textdomain() {
-	$locale = apply_filters( 'plugin_locale', get_locale(), 'metamedia' );
-	load_textdomain( 'metamedia', WP_LANG_DIR . '/metamedia/' . $locale . '.mo' );
-	load_plugin_textdomain( 'metamedia', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	add_action( 'plugins_loaded', 'metamedia_load_textdomain' );
+	add_action( 'admin_enqueue_scripts', 'metamedia_register_assets', 1 );
+	add_action( 'save_post', 'metamedia_save_post', 10, 2 );
+	add_action( 'add_meta_boxes', 'metamedia_add_meta_boxes' );
 }

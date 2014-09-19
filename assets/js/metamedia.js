@@ -275,4 +275,5 @@ window.metamedia = window.metamedia || {};
 		media.control.init();
 		media.gallery.init();
 	});
+
 })( this, jQuery );

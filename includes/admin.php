@@ -9,7 +9,7 @@
  */
 
 /**
- * Register and localize media library.
+ * Register and localize media library assets.
  *
  * A preliminary attempt has been made to abstract the 'metamedia-control'
  * script in order to allow it to be re-used anywhere a similiar media selection
@@ -20,23 +20,20 @@
  *
  * @since 1.0.0
  */
-function metamedia_init_admin() {
+function metamedia_register_assets() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	// Register styles.
 	wp_register_style( 'metamedia', METAMEDIA_URI . 'assets/css/metamedia.min.css' );
 
 	// Register scripts.
-	wp_register_script( 'metamedia', METAMEDIA_URI . 'assets/js/metamedia' . $suffix . '.js', array( 'media-upload', 'media-views' ) );
+	wp_register_script( 'metamedia', METAMEDIA_URI . 'assets/js/metamedia' . $suffix . '.js', array( 'media-upload', 'media-views', 'underscore' ) );
 	wp_localize_script( 'metamedia', 'metamediaL10n', array(
 		'frameTitle'      => __( 'Choose an Attachment', 'metamedia' ),
 		'frameUpdateText' => __( 'Update Attachment', 'metamedia' ),
 		'fullSizeLabel'   => __( 'Full Size', 'metamedia' ),
 		'imageSizeNames'  => metamedia_image_size_names(),
 	) );
-
-	add_action( 'save_post', 'metamedia_save_post', 10, 2 );
-	add_action( 'add_meta_boxes', 'metamedia_add_meta_boxes' );
 }
 
 /**
