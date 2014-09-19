@@ -24,10 +24,10 @@ function metamedia_init_admin() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	// Register styles.
-	wp_register_style( 'metamedia', METAMEDIA_URI . 'assets/styles/metamedia.min.css' );
+	wp_register_style( 'metamedia', METAMEDIA_URI . 'assets/css/metamedia.min.css' );
 
 	// Register scripts.
-	wp_register_script( 'metamedia', METAMEDIA_URI . 'assets/scripts/metamedia' . $suffix . '.js', array( 'media-upload', 'media-views' ) );
+	wp_register_script( 'metamedia', METAMEDIA_URI . 'assets/js/metamedia' . $suffix . '.js', array( 'media-upload', 'media-views' ) );
 	wp_localize_script( 'metamedia', 'metamediaL10n', array(
 		'frameTitle'      => __( 'Choose an Attachment', 'metamedia' ),
 		'frameUpdateText' => __( 'Update Attachment', 'metamedia' ),
