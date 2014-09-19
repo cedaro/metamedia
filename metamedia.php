@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Metamedia
- * Plugin URI: http://www.blazersix.com/
+ * Plugin URI: https://wordpress.org/plugins/metamedia/
  * Description: Register meta boxes for selecting featured images or galleries.
  * Version: 1.0.0
- * Author: Blazer Six, Inc.
- * Author URI: http://www.blazersix.com/
+ * Author: Cedaro
+ * Author URI: http://www.cedaro.com/
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: metamedia
@@ -13,7 +13,7 @@
  *
  * @package Metamedia
  * @author Brady Vercher <brady@blazersix.com>
- * @copyright Copyright (c) 2013, Blazer Six, Inc.
+ * @copyright Copyright (c) 2014, Cedaro
  * @license GPL-2.0+
  */
 

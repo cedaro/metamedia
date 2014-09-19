@@ -3,8 +3,7 @@
  * Metamedia
  *
  * @package Metamedia
- * @author Brady Vercher <brady@blazersix.com>
- * @copyright Copyright (c) 2013, Blazer Six, Inc.
+ * @copyright Copyright (c) 2014, Cedaro
  * @license GPL-2.0+
  */
 

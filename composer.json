@@ -1,17 +1,17 @@
 {
-	"name": "blazersix/metamedia",
+	"name": "cedaro/metamedia",
 	"description": "A WordPress plugin to register media selection meta boxes.",
 	"type": "wordpress-plugin",
-	"homepage": "https://github.com/blazersix/metamedia",
+	"homepage": "https://github.com/cedaro/metamedia",
 	"authors": [
 		{
 			"name": "Brady Vercher",
 			"email": "brady@blazersix.com",
-			"homepage": "http://www.blazersix.com/"
+			"homepage": "http://www.cedaro.com/"
 		}
 	],
 	"support": {
-		"issues": "https://github.com/blazersix/metamedia/issues"
+		"issues": "https://github.com/cedaro/metamedia/issues"
 	},
 	"require": {
 		"composer/installers": "~1.0"

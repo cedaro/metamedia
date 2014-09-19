@@ -1,6 +1,6 @@
 === Metamedia ===
-Contributors: blazersix, bradyvercher
-Tags: 
+Contributors: cedaro, bradyvercher
+Tags:
 Requires at least: 3.5
 Tested up to: 4.0
 Stable tag: trunk
@@ -17,15 +17,14 @@ Metamedia allows for registering simple meta boxes like the "Featured Image" met
 
 *This plugin doesn't do anything on its own. You should only install it to enable support for functionality defined in your theme or if you're a developer and want to leverage the benefits it provides.*
 
-[Documentation for integrating Metamedia](https://github.com/blazersix/metamedia#usage) can be found in the GitHub repository.
+[Documentation for integrating Metamedia](https://github.com/cedaro/metamedia#usage) can be found in the GitHub repository.
 
 = Additional Resources =
 
 * [Write a review](http://wordpress.org/support/view/plugin-reviews/metamedia#postform)
 * [Have a question?](http://wordpress.org/support/plugin/metamedia)
-* [Contribute on GitHub](https://github.com/blazersix/metamedia)
+* [Contribute on GitHub](https://github.com/cedaro/metamedia)
 * [Follow @bradyvercher](https://twitter.com/bradyvercher)
-* [Hire Blazer Six](http://www.blazersix.com/)
 
 == Installation ==
 
@@ -33,7 +32,7 @@ Install Metamedia like any other plugin. [Check out the codex](http://codex.word
 
 = Usage =
 
-[Documentation for integrating Metamedia](https://github.com/blazersix/metamedia#usage) can be found in the GitHub repository.
+[Documentation for integrating Metamedia](https://github.com/cedaro/metamedia#usage) can be found in the GitHub repository.
 
 == Screenshots ==
 

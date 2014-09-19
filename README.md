@@ -11,10 +11,10 @@ With the release of WordPress 3.5, an effort was made to decouple attachments fr
 
 Metamedia allows for registering simple meta boxes like the "Featured Image" meta box for selecting a single image or gallery of images to be stored in a post meta field for easy retrieval and usage in templates. It can be used with any post type and uses the native media frame.
 
-![Gallery Meta Box](https://raw.github.com/blazersix/metamedia/master/screenshot-1.png)  
+![Gallery Meta Box](https://raw.github.com/cedaro/metamedia/master/screenshot-1.png)  
 _An example gallery meta box. The images can be sorted directly in the meta box._
 
-![Featured Image Meta Box](https://raw.github.com/blazersix/metamedia/master/screenshot-2.png)  
+![Featured Image Meta Box](https://raw.github.com/cedaro/metamedia/master/screenshot-2.png)  
 _An example meta box with custom labels for selecting a single image._
 
 ## Usage ##
@@ -93,14 +93,14 @@ Metamedia is available in the [WordPress plugin repository](https://wordpress.or
 
 ### Upload ###
 
-1. Download the [latest release](https://github.com/blazersix/metamedia/archive/master.zip) from GitHub.
+1. Download the [latest release](https://github.com/cedaro/metamedia/archive/master.zip) from GitHub.
 2. Go to the __Plugins &rarr; Add New__ screen in your WordPress admin panel and click the __Upload__ tab at the top.
 3. Upload the zipped archive.
 4. Click the __Activate Plugin__ link after installation completes.
 
 ### Manual ###
 
-1. Download the [latest release](https://github.com/blazersix/metamedia/archive/master.zip) from GitHub.
+1. Download the [latest release](https://github.com/cedaro/metamedia/archive/master.zip) from GitHub.
 2. Unzip the archive.
 3. Copy the folder to `/wp-content/plugins/`.
 4. Go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under Metamedia.
@@ -111,7 +111,7 @@ Read the Codex for more information about [installing plugins manually](http://c
 
 Clone this repository in `/wp-content/plugins/`:
 
-`git clone git@github.com:blazersix/metamedia.git`
+`git clone git@github.com:cedaro/metamedia.git`
 
 Then go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under Metamedia.
 

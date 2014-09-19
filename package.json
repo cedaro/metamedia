@@ -2,17 +2,17 @@
   "name": "Metamedia",
   "version": "1.0.0",
   "description": "A WordPress plugin to register media selection meta boxes.",
-  "homepage": "https://github.com/blazersix/metamedia",
+  "homepage": "https://github.com/cedaro/metamedia",
   "author": {
     "name": "Brady Vercher",
-    "url": "http://www.blazersix.com/"
+    "url": "http://www.cedaro.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/blazersix/metamedia.git"
+    "url": "git://github.com/cedaro/metamedia.git"
   },
   "bugs": {
-    "url": "https://github.com/blazersix/metamedia/issues"
+    "url": "https://github.com/cedaro/metamedia/issues"
   },
   "main": "Gruntfile.js",
   "devDependencies": {
