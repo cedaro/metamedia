@@ -89,31 +89,29 @@ __`register_metamedia_gallery_meta_box( $meta_key, $post_type, $args = array() )
 
 ## Installation ##
 
+Metamedia is available in the [WordPress plugin repository](https://wordpress.org/plugins/metamedia/), so it can be installed from within your admin panel like any other plugin. You may also download it directly from GitHub using one of the following methods:
+
 ### Upload ###
 
-1. Download the latest tagged archive (choose the "zip" option).
-2. Go to the __Plugins &rarr; Add New__ screen, then click the __Upload__ link just under the screen heading.
+1. Download the [latest release](https://github.com/blazersix/metamedia/archive/master.zip) from GitHub.
+2. Go to the __Plugins &rarr; Add New__ screen in your WordPress admin panel and click the __Upload__ tab at the top.
 3. Upload the zipped archive.
-4. If the plugin installed successfully, you will see a link that says __Activate Plugin__ — click it to activate.
+4. Click the __Activate Plugin__ link after installation completes.
 
 ### Manual ###
 
-1. Download the latest tagged archive (choose the "zip" option).
+1. Download the [latest release](https://github.com/blazersix/metamedia/archive/master.zip) from GitHub.
 2. Unzip the archive.
-3. Copy the folder to your `/wp-content/plugins/` directory.
-4. Go to the __Plugins__ screen and click the __Activate__ link.
+3. Copy the folder to `/wp-content/plugins/`.
+4. Go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under Metamedia.
 
-*Check out the Codex for more information on [installing plugins manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).*
+Read the Codex for more information about [installing plugins manually](http://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation).
 
 ### Git ###
 
-Change your working directory to `/wp-content/plugins/` and clone this repository:
+Clone this repository in `/wp-content/plugins/`:
 
-`git clone git://github.com/blazersix/metamedia.git`
+`git clone git@github.com:blazersix/metamedia.git`
 
-Then go to your __Plugins__ screen and click the __Activate__ link.
+Then go to the __Plugins__ screen in your WordPress admin panel and click the __Activate__ link under Metamedia.
 
-
-## Credits ##
-
-Built by [Brady Vercher](https://twitter.com/bradyvercher)
