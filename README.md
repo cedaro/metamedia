@@ -4,7 +4,7 @@ A WordPress plugin to register media selection meta boxes.
 
 __Contributors:__ [Brady Vercher](https://github.com/bradyvercher)  
 __Requires:__ 3.5  
-__Tested up to:__ 3.5.1  
+__Tested up to:__ 4.0  
 __License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)
 
 With the release of WordPress 3.5, an effort was made to decouple attachments from the posts where they were uploaded, which was a shift from previous versions, and a greater emphasis was placed on the `[gallery]` shortcode. Backward compatibility was maintained, but it became a little less intuitive to manage a gallery of images that were simply attached to a post. In any case it has always been a little difficult to select multiple featured images, or multiple galleries, for use in different areas in a template.
