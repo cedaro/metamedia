@@ -49,7 +49,7 @@ if ( is_admin() ) {
 	require( METAMEDIA_DIR . 'includes/admin.php' );
 
 	add_action( 'plugins_loaded', 'metamedia_load_textdomain' );
-	add_action( 'admin_enqueue_scripts', 'metamedia_register_assets', 1 );
+	add_action( 'init', 'metamedia_register_assets', 1 );
 	add_action( 'save_post', 'metamedia_save_post', 10, 2 );
 	add_action( 'add_meta_boxes', 'metamedia_add_meta_boxes' );
 }
