@@ -9,6 +9,15 @@
  */
 
 /**
+ * Load the library text domain.
+ *
+ * @since 1.0.0
+ */
+function metamedia_load_textdomain() {
+	load_plugin_textdomain( 'metamedia', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages' );
+}
+
+/**
  * Render a control to select a single attachment.
  *
  * @since 1.0.0

@@ -29,15 +29,6 @@ if ( ! defined( 'METAMEDIA_URI' ) ) {
 }
 
 /**
- * Load the library text domain.
- *
- * @since 1.0.0
- */
-function metamedia_load_textdomain() {
-	load_plugin_textdomain( 'metamedia', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-
-/**
  * Load API functions.
  */
 require( METAMEDIA_DIR . 'includes/functions.php' );
