@@ -14,8 +14,8 @@ module.exports = function(grunt) {
 			},
 			all: [
 				'Gruntfile.js',
-				'assets/scripts/*.js',
-				'!assets/scripts/*.min.js',
+				'assets/js/*.js',
+				'!assets/js/*.min.js',
 			]
 		},
 
@@ -26,10 +26,22 @@ module.exports = function(grunt) {
 				},
 				files: [
 					{
-						src: 'assets/styles/less/metamedia.less',
-						dest: 'assets/styles/metamedia.min.css'
+						src: 'assets/css/less/metamedia.less',
+						dest: 'assets/css/metamedia.min.css'
 					},
 				]
+			}
+		},
+
+		makepot: {
+			plugin: {
+				options: {
+					mainFile: 'metamedia.php',
+					potHeaders: {
+						poedit: true
+					},
+					type: 'wp-plugin'
+				}
 			}
 		},
 
@@ -37,8 +49,8 @@ module.exports = function(grunt) {
 			dist: {
 				files: [
 					{
-						src: 'assets/scripts/metamedia.js',
-						dest: 'assets/scripts/metamedia.min.js'
+						src: 'assets/js/metamedia.js',
+						dest: 'assets/js/metamedia.min.js'
 					}
 				]
 			}
@@ -50,7 +62,7 @@ module.exports = function(grunt) {
 				tasks: ['jshint', 'uglify']
 			},
 			less: {
-				files: ['assets/styles/less/*.less'],
+				files: ['assets/css/less/*.less'],
 				tasks: ['less']
 			}
 		},
