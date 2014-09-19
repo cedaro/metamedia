@@ -18,6 +18,13 @@
  */
 
 /**
+ * Short-circuit loading if the library has been included elsewhere.
+ */
+if ( function_exists( 'metamedia_control' ) ) {
+	return;
+}
+
+/**
  * Library path and URL.
  */
 if ( ! defined( 'METAMEDIA_DIR' ) ) {
